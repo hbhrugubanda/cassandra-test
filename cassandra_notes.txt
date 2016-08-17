@@ -1,0 +1,20 @@
+Good reading
+http://www.slideshare.net/planetcassandra/cassandra-and-docker-lessons-learnt
+http://www.slideshare.net/planetcassandra/datastax-dockerizing-cassandra-on-modern-linux
+http://www.slideshare.net/jbellis/cassandra-at-nosql-matters-2012
+
+
+To use thrift as well?
+Know this:
+https://www.hakkalabs.co/articles/how-cassandra-stores-data
+https://www.hakkalabs.co/articles/c-cheat-sheet
+http://www.tutorialspoint.com/cassandra/cassandra_create_data.htm
+
+To run the containers:
+docker run --name mbe-cassandra cassandra
+Once it's created the default superuser role cassandra, you can execute the below in another terminal
+docker run -it --link mbe-cassandra:cassandra --rm cassandra sh -c 'exec cqlsh "$CASSANDRA_PORT_9042_TCP_ADDR"'
+
+Be aware of:
+docker start mbe-cassandra
+docker stop mbe-cassandra
